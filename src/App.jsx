@@ -12,7 +12,6 @@ const App = () => {
     });
     const [lastClickedButton, setLastClickedButton] = useState(null); 
     const [buttonColors, setButtonColors] = useState({}); 
-    const [bodyColor, setBodyColor] = useState(''); 
 
     const getRandomColor = () => {
         const letters = '0123456789ABCDEF';
@@ -32,7 +31,6 @@ const App = () => {
                 randomButtonColor = getRandomColor();
             } while (randomButtonColor === randomBodyColor);
 
-            setBodyColor(randomBodyColor);
             document.body.style.backgroundColor = randomBodyColor; 
             setButtonColors((prev) => ({ ...prev, [buttonKey]: randomButtonColor })); 
             setClickedButtons((prev) => ({ ...prev, [buttonKey]: true }));
